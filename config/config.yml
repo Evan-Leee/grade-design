@@ -1,0 +1,5 @@
+default:
+  port: 3000
+  database: 'mongodb://localhost:27017/liyu'
+  sessionTtl: 3600 # 60(MINUTE_PER_HOUR) * 60(SECONDS_PER_MINUTE)
+  QAInfoAddress: ''

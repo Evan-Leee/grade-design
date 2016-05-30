@@ -1,0 +1,26 @@
+@import "color";
+
+.header-major {
+  header {
+    nav {
+      background-color: @nice-green;
+      height: 70px;
+      margin-bottom: 20px;
+      .brand {
+        display: inline-block;
+        a {
+          text-decoration: none;
+          img {
+            margin-top: 5px;
+            width: 400px;
+            @media only screen and (max-width: 600px){
+              margin-top: 15px;
+              width: 260px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

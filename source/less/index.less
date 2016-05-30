@@ -1,0 +1,99 @@
+@import './common/main.less';
+@import './common/nav.less';
+
+section.homepage {
+    min-height: 100vh;
+
+    .header-right .login a {
+        font-size: 16px;
+        display: inline-block;
+        cursor: pointer;
+        background: transparent;
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 4px 27px;
+        border-radius: 20px;
+        transition: color 0.5s, background 0.5s, border 0.5s;
+        &:hover{
+          color: #fff;
+          background: #1FA8AD;
+          border: 2px solid #1FA8AD;
+        }
+      }
+    #head-right {
+      animation-duration: 1s;
+      animation-delay: 0.5s;
+      height: 90px;
+    }
+    .filter{
+      background: url("../images/blackboard.jpg");
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -999;
+      width: 100vw;
+      height: 100%;
+      -webkit-filter: blur(3px);
+      -moz-filter: blur(3px) ;
+      -o-filter: blur(3px) ;
+      -ms-filter: blur(3px) ;
+      filter: blur(3px) ;
+    }
+
+    #content {
+      color: #fff;
+      h1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: bold;
+        animation-duration: 1s;
+        animation-delay: 0.5s;
+      }
+      li{
+        i {color: #1FA8AD;}
+        padding-top: 40px;
+        list-style: none;
+        text-align: center;
+
+        &:nth-child(1){
+          animation-duration: 1s;
+          animation-delay: 0.8s;
+          border-bottom: 1px solid #fff;
+          border-right: 1px solid #fff;
+        }
+        &:nth-child(2){
+          animation-duration: 1s;
+          animation-delay: 1.1s;
+          border-right: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+        }
+        &:nth-child(3){
+          animation-duration: 1s;
+          animation-delay: 1.4s;
+          border-bottom: 1px solid #fff;
+        }
+        &:nth-child(4){
+          animation-duration: 1s;
+          animation-delay: 1.7s;
+          border-right: 1px solid #fff;
+        }
+        &:nth-child(5){
+          animation-duration: 1s;
+          animation-delay: 2s;
+          border-right: 1px solid #fff;
+        }
+        &:nth-child(6){
+          animation-duration: 1s;
+          animation-delay: 2.3s;
+        }
+      }
+    }
+  .footer{
+    animation-duration: 1s;
+    margin-top: 50px;
+    text-align: center;
+    color: #fff;
+    a{color: #fff;}
+  }
+}

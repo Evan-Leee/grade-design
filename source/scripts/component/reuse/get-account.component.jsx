@@ -9,7 +9,7 @@ var GetAccount = React.createClass({
   getInitialState: function () {
     return {
       isLoged: false,
-      account: '',
+      account: ''
     };
   },
 
@@ -27,7 +27,7 @@ var GetAccount = React.createClass({
     var userList = (
         <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li><a href="user-center.html">个人中心</a></li>
-          <li><a href="dashboard.html">控制台</a></li>
+          <li><a href="dashboard.html">答题中心</a></li>
           <li role="separator" className="divider" />
           <li><a onClick={this.logout}>退出</a></li>
         </ul>

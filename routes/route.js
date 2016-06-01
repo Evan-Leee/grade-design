@@ -26,4 +26,5 @@ exports.setRoutes = function (app) {
   app.use('/papers', require('./routers/papers'));
   app.use('/test', require('./routers/test'));
   app.use('/paper-draft', require('./routers/paper-draft'));
+  app.use('/contest-paper', require('./routers/contest-paper'))
 };

@@ -6,7 +6,7 @@ var Navigation = React.createClass({
         <nav>
           <div className="brand">
             <a href="/">
-              <img src="build/2016-summer-logo-white.png"/>
+              <img src="build/intern.png"/>
             </a>
           </div>
           {this.props.children}

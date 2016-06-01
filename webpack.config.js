@@ -14,6 +14,7 @@ var config = {
     "register": "./source/scripts/register.jsx",
     "user-center": "./source/scripts/user-center.jsx",
     "dashboard": "./source/scripts/dashboard.jsx",
+    "contest": "./source/scripts/contest.jsx",
     "vendors": ['jquery', 'bootstrap.css', 'font-awesome', 'react', 'react-dom', 'bootstrap.js', 'animate.css']
   },
   output: {
@@ -107,10 +108,9 @@ function htmlwebpackPluginBuilder(fileName, deps) {
   })
 }
 
+config.plugins.push(htmlwebpackPluginBuilder('contest.html', ['contest.css', 'vendors', 'contest']));
 config.plugins.push(htmlwebpackPluginBuilder('index.html', ['index.css', 'vendors', 'index']));
-config.plugins.push(htmlwebpackPluginBuilder('index-00.html', ['index.css']));
 config.plugins.push(htmlwebpackPluginBuilder('register.html', ['register.css', 'vendors', 'register']));
-config.plugins.push(htmlwebpackPluginBuilder('user-center.html', ['user-center.css', 'vendors', 'user-center']));
 config.plugins.push(htmlwebpackPluginBuilder('user-center.html', ['user-center.css', 'vendors', 'user-center']));
 config.plugins.push(htmlwebpackPluginBuilder('start.html', ['start.css', 'vendors', 'start']));
 config.plugins.push(htmlwebpackPluginBuilder('password-retrieve.html', ['password-retrieve.css', 'vendors', 'password-retrieve']));
@@ -121,9 +121,6 @@ config.plugins.push(htmlwebpackPluginBuilder('homework.html', ['homework.css', '
 config.plugins.push(htmlwebpackPluginBuilder('dashboard.html', ['dashboard.css', 'vendors', 'dashboard']));
 config.plugins.push(htmlwebpackPluginBuilder('404.html', ['404.css', 'vendors', '404']));
 config.plugins.push(htmlwebpackPluginBuilder('deadline.html', ['deadline.css', 'vendors', 'deadline']));
-config.plugins.push(htmlwebpackPluginBuilder('style-guide.html', ['style-guide.css', 'vendors', 'style-guide']));
-config.plugins.push(htmlwebpackPluginBuilder('group.html', ['group.css', 'vendors', 'group']));
-config.plugins.push(htmlwebpackPluginBuilder('qa-page.html', ['qa-page.css', 'vendors', 'qa-page']));
 config.plugins.push(htmlwebpackPluginBuilder('paper-assignment.html', ['paper-assignment.css', 'vendors', 'paper-assignment']));
 config.plugins.push(htmlwebpackPluginBuilder('admin.html', ['admin.css', 'vendors', 'admin']));
 config.plugins.push(htmlwebpackPluginBuilder('403.html', ['vendors']));

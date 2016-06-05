@@ -4,9 +4,7 @@ var Checking = React.createClass({
 
   handleChange: function (evt){
     if(evt.target.checked){
-      console.log('name: '+ evt.target.name);
-      console.log('answer: ' + evt.target.value)
-      //this.props.setAnswer(name, evt.target.value)
+      this.props.setAnswer(evt.target.name, evt.target.value)
     }
   },
 

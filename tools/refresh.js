@@ -422,13 +422,13 @@ db.once('open', () => {
               content: "主要考察c的各类语法，变量和函数的声明，数组，指针，结构体的使用，函数的调用和参数传递等。"
             }
           }
-        ], function () {
+        ], function (err, data) {
           console.log('insert contestPaper end.');
-          done(null);
+          done(err, data);
         });
       });
     },
-    (done) => {
+    (data, done) => {
       logicPuzzle.remove(function () {
         logicPuzzle.create([
           {
@@ -526,7 +526,8 @@ db.once('open', () => {
             blankQuizId: 1,
             paperId: 1
 
-          }, {
+          },
+          {
             userId: 2,
             isCommited: true,
             quizItems: [
@@ -622,7 +623,8 @@ db.once('open', () => {
             blankQuizId: 1,
             paperId: 1
 
-          }, {
+          },
+          {
             userId: 3,
             quizItems: [
               {
@@ -717,7 +719,8 @@ db.once('open', () => {
             blankQuizId: 1,
             paperId: 1
 
-          }, {
+          },
+          {
             userId: 4,
             quizItems: [
               {
@@ -812,7 +815,8 @@ db.once('open', () => {
             blankQuizId: 1,
             paperId: 1
 
-          }, {
+          },
+          {
             userId: 5,
             quizItems: [
               {
@@ -907,7 +911,8 @@ db.once('open', () => {
             blankQuizId: 1,
             paperId: 1
 
-          }, {
+          },
+          {
             userId: 6,
             quizItems: [
               {
@@ -1002,20 +1007,21 @@ db.once('open', () => {
             blankQuizId: 1,
             paperId: 1
           }
-        ], function () {
+        ], function (err,data) {
           console.log('insert logicPuzzle end.');
-          done(null);
+          done(err, data);
         });
       });
     },
-    (done) => {
+    (data, done) => {
       paperDetail.remove(function () {
         paperDetail.create([
           {
             id: 1,
+            name: 'html+css 基础课程',
             questions: [
               {
-                id: '1-1',
+                name: '1-1',
                 type: 'fill-in',
                 desc: 'UML的中文全称是',
                 img: '',
@@ -1027,9 +1033,9 @@ db.once('open', () => {
                 stdAnswer: '统一建模语言'
               },
               {
-                id: '1-2',
+                name: '1-2',
                 type: 'fill-in',
-                desc: '对象最突出的特征是',
+                desc: '对象最突出的特征是（三个）',
                 img: '',
                 option: {
                   number: 3,
@@ -1039,106 +1045,107 @@ db.once('open', () => {
                 stdAnswer: '封装性-继承性-多态性'
               },
               {
-                id: '2-1',
+                name: '2-1',
                 type: 'choice',
                 desc: 'UML 与软件工程的关系是',
                 img: '',
                 option: {
                   number: 4,
                   content: {
-                    A: ' UML 就是软件工程',
+                    D: ' UML 是软件工程的一部分',
                     B: ' UML 参与到软件工程中软件开发过程的几个阶段',
                     C: ' UML 与软件工程无关',
-                    D: ' UML 是软件工程的一部分'
+                    A: ' UML 就是软件工程'
                   }
                 },
                 score: 10,
                 stdAnswer: 'B'
               },
               {
-                id: '2-2',
+                name: '2-2',
                 type: 'choice',
                 desc: 'Java 语言支持',
                 img: '',
                 option: {
                   number: 4,
                   content: {
-                    A: ' 单继承',
-                    B: ' 多继承',
+                    D: ' 单继承和多继承都不支持',
                     C: ' 单继承和多继承都支持',
-                    D: ' 单继承和多继承都不支持'
+                    B: ' 多继承',
+                    A: ' 单继承'
                   }
                 },
                 score: 10,
                 stdAnswer: 'A'
               },
               {
-                id: '3-1',
+                name: '3-1',
                 type: 'multi',
                 desc: '用例的粒度分为以下哪三种',
                 img: '',
                 option: {
                   number: 4,
                   content: {
-                    A: ' 概述级',
-                    B: ' 需求级',
+                    D: ' 子功能级',
                     C: ' 用户目标级',
-                    D: ' 子功能级'
+                    B: ' 需求级',
+                    A: ' 概述级'
                   }
                 },
                 score: 15,
                 stdAnswer: 'A-B-D'
               },
               {
-                id: '3-2',
+                name: '3-2',
                 type: 'multi',
                 desc: '类图由以下哪三部分组成',
                 img: '',
                 option: {
                   number: 4,
                   content: {
-                    A: ' 名称(Name)',
-                    B: ' 属性(Attribute)',
+                    D: ' 方法(Function)',
                     C: ' 操作(Operation)',
-                    D: ' 方法(Function)'
+                    B: ' 属性(Attribute)',
+                    A: ' 名称(Name)'
                   }
                 },
                 score: 15,
                 stdAnswer: 'A-B-C'
               },
               {
-                id: '4-1',
-                type: 'judge',
+                name: '4-1',
+                type: 'checking',
                 desc: '用例图只是用于和客户交流和沟通的,用于确定需求。',
                 img: '',
                 option: {
                   number: 0,
-                  content:null
+                  content: null
                 },
                 score: 10,
                 stdAnswer: 'false'
               },
               {
-                id: '4-2',
-                type: 'judge',
+                name: '4-2',
+                type: 'checking',
                 desc: '在状态图中,终止状态在一个状态图中允许有任意多个。',
                 img: '',
                 option: {
                   number: 0,
-                  content:null
+                  content: null
                 },
                 score: 10,
                 stdAnswer: 'true'
               }
             ]
           }
-        ], function () {
+        ], function (err, data) {
           console.log('insert paperDetail end.');
-          done(null);
-        })
-      })
+          done(err, data);
+        });
+      });
     }
-  ], () => {
+  ], (err, data) => {
+    console.log(err);
     process.exit();
   });
 });

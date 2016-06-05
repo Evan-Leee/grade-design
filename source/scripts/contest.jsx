@@ -26,10 +26,10 @@ var ContestApp = React.createClass({
           </div>
           <ContestContent perPage={5}/>
         </div>
-
       </div>
     )
   }
 });
 
 ReactDom.render(<ContestApp />,document.getElementById('contest'));
+

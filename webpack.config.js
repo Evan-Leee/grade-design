@@ -15,6 +15,7 @@ var config = {
     "user-center": "./source/scripts/user-center.jsx",
     "dashboard": "./source/scripts/dashboard.jsx",
     "contest": "./source/scripts/contest.jsx",
+    "contest-paper": "./source/scripts/contest-paper.jsx",
     "vendors": ['jquery', 'bootstrap.css', 'font-awesome', 'react', 'react-dom', 'bootstrap.js', 'animate.css']
   },
   output: {
@@ -109,6 +110,7 @@ function htmlwebpackPluginBuilder(fileName, deps) {
 }
 
 config.plugins.push(htmlwebpackPluginBuilder('contest.html', ['contest.css', 'vendors', 'contest']));
+config.plugins.push(htmlwebpackPluginBuilder('contest-paper.html', ['contest-paper.css', 'vendors', 'contest-paper']));
 config.plugins.push(htmlwebpackPluginBuilder('index.html', ['index.css', 'vendors', 'index']));
 config.plugins.push(htmlwebpackPluginBuilder('register.html', ['register.css', 'vendors', 'register']));
 config.plugins.push(htmlwebpackPluginBuilder('user-center.html', ['user-center.css', 'vendors', 'user-center']));

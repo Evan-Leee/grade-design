@@ -10,7 +10,22 @@ var ContestStore = Reflux.createStore ({
   listenables: ContestActions,
 
   onInitPaper: function (id){
-    console.log('init paper : ' + id);
+    superagent.get('/contest-paper/detail')
+      .set('Content-Type', 'application/json')
+      .query({paperId: id})
+      .use(errorHandler)
+      .end((err, res) => {
+        if(err){
+          console.log(err);
+        }else {
+          console.log(res.body);
+          this.trigger({
+            questions: res.body.questions,
+            paperName: res.body.paperName
+          })
+        }
+      });
+
   },
 
   onInitPaperList: function (perPage, offset){
@@ -19,15 +34,15 @@ var ContestStore = Reflux.createStore ({
       .query({perPage: perPage, offset: offset})
       .use(errorHandler)
       .end((err, res) => {
-      if(err){
-        console.log(err);
-      }else {
-        this.trigger({
+        if(err){
+          console.log(err);
+        }else {
+          this.trigger({
           papers: res.body.papers,
           pageNum: Math.ceil(res.body.pageInfo.total / perPage)
-        })
-      }
-    })
+          })
+        }
+      })
   }
 
 });

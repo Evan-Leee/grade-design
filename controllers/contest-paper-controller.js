@@ -1,6 +1,7 @@
 'use strict';
 
 var ContestPaper = require('../models/contest-paper');
+var PaperDetail = require('../models/paper-detail');
 var util = require('util');
 var async = require('async');
 
@@ -35,6 +36,17 @@ ContestPaperController.prototype.initPaperList = function (req, res){
       papers: data
     })
   });
+};
+
+ContestPaperController.prototype.initPaperDetail = function (req, res){
+  var paperId = parseInt(req.query.paperId);
+  PaperDetail.findOne({id: paperId}, (err, data)=>{
+    res.send({
+      paperName: data.name,
+      questions: data.questions
+    })
+  });
+
 };
 
 module.exports = ContestPaperController;

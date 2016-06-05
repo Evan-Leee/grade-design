@@ -32,7 +32,7 @@ var Dashboard = React.createClass({
         <div className="services-top-grids text-center">
           <div className="secvice-top-grid-1 fadeInUp animated">
             <p>包含历届真题试题，让你考前心里有数。</p>
-            <a href="contest.html">点击进入</a>
+            <a href="/contest.html">点击进入</a>
           </div>
           <div className="secvice-top-grid-2 fadeInUp animated">
             <p>定向训练，哪里不行补哪里，考点逐个击破。</p>
